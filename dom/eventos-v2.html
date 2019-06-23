@@ -1,0 +1,28 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+<div id="app">
+    <p>{{ contador }}</p>
+    <p v-on:mouseMove="autlizaXY" >Mouse: {{ x }} {{ y }}</p>
+    <button @click.prevent.stop="sommaUma" class="btn btn-primary">Somar 1</button>
+</div>
+
+<script>
+new Vue({
+    el:'#app',
+    data: {
+        contador: 0,
+        x: 0,
+        y: 0,
+    },
+    methods: {
+        sommaUma(){
+            this.contador++;
+        },
+        autlizaXY(event) {
+            // console.log(event);
+            this.x = event.clientX;
+            this.y = event.clientY;
+        }
+    },
+});
+</script>

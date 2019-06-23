@@ -1,0 +1,36 @@
+<script src="https://unpkg.com/vue"></script>
+
+<div id="desafio">
+    <!-- 1) Exiba um alert quando o botão for clicado -->
+    <div>
+        <button @click.prevent.stop="disparaAlerta">Exibir Alerta</button>
+    </div>
+    
+    <!-- 2) Escute o evento "keydown" e armazene "valor" na propriedade data (dica: event.target.value) -->
+    <div>
+        <label for="">KeyUp Com método </label>
+        <input type="text" @keyup="preencherValor">
+        <p>{{ valor }}</p>
+    </div>
+
+    <div>
+        <label for="">KeyUp direto do evento </label>
+        <input type="text" @keyup="valor = $event.target.value">
+        <p>{{ valor }}</p>
+    </div>
+
+    <!-- 3) Ajuste p exemplo 2 para disparar o evento quando a tecla for ENTER -->
+    <div>
+        <label for="">Keydown enter com método </label>
+        <input type="text" @keydown.enter="preencherValorEnter">
+        <p>{{ valor }}</p>
+    </div>
+
+    <div>
+        <label for="">Keydown enter direto pelo evento </label>
+        <input type="text" @keydown.enter="valor = $event.target.value">
+        <p>{{ valor }}</p>
+    </div>
+</div>
+
+<script src="app.js"></script>
